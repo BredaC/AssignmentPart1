@@ -17,9 +17,14 @@ fetch(url)
   .then(function(response) {
     return response.json(); 
   })
-  .then(function(data) {
-    // write nobel prizes data to the console    
-     return console.log(data); 
+  .then(data=>{
+    //Write Nobel Prizes to the console
+    console.log('Nobel Prizes');
+    console.log('Year:',data.nobelPrizes[0].awardYear);
+    console.log('Winner:',data.nobelPrizes[0].laureates[0].fullName.en);    
+    console.log('ID:',data.nobelPrizes[0].laureates[0].id);
+    console.log('Category:',data.nobelPrizes[0].category.en);  
+    console.log('Awarded For:',data.nobelPrizes[0].laureates[0].motivation.en); 
     
   })
   .catch(function(error) {
